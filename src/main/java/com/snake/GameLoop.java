@@ -42,7 +42,7 @@ public class GameLoop {
             return true;
         }
         if (isExist(Snake.headPos.x, Snake.headPos.y, false)) {
-            System.out.println("Crashed to body");
+            System.out.println("Crashed to body: " + Snake.headPos.x + ", " + Snake.headPos.y);
             return true;
         }
         return false;        
@@ -60,6 +60,7 @@ public class GameLoop {
         for (Point items: Snake.pos) {
             if (items == Snake.headPos && isHeadInclude == false) continue;
             if (items.x == _x && items.y == _y) {
+                System.out.println("Detected on: " + items.x + ", " + items.y);
                 return true;
             }
         }

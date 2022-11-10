@@ -13,7 +13,6 @@ public class GameController implements Initializable {
     @FXML public TilePane rootCanvas;
 
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("SDAASASDS" + rootCanvas.getChildren().get(0));
         rootCanvas.setOnKeyPressed(e -> this.OnKeyPress(e.getCode()));
     }
 
