@@ -33,6 +33,8 @@ public class App extends Application {
         Snake.pos.add(new Point(10, 10));
         Snake.pos.add(new Point(11, 10));
         Snake.pos.add(new Point(12, 10));
+        Board.seed = new Point(2, 2);
+        Snake.headPos = new Point(12, 10);
         TimerTask gameLoop = new TimerTask() {
             @Override
             public void run() {
