@@ -28,12 +28,13 @@ public class App extends Application {
         stage.show();
         scene.setOnKeyPressed(e -> controller.OnKeyPress(e.getCode()));
         stage.setOnCloseRequest(e -> gameTimer.cancel());
+        Snake.pos.add(new Point(6, 10));
+        Snake.pos.add(new Point(7, 10));
         Snake.pos.add(new Point(8, 10));
         Snake.pos.add(new Point(9, 10));
         Snake.pos.add(new Point(10, 10));
-        Snake.pos.add(new Point(11, 10));
-        Snake.pos.add(new Point(12, 10));
-        Board.seed = new Point(2, 2);
+        Board.seed = new Point(0, 0);
+        GameLoop.putSeed(controller.rootCanvas);
         Snake.headPos = new Point(12, 10);
         TimerTask gameLoop = new TimerTask() {
             @Override
@@ -48,7 +49,7 @@ public class App extends Application {
 
     @Override
     public void stop(){
-        System.out.println("Stage is closing");
+        System.out.println("Stage is closing. Length: " + Snake.length);
         gameTimer.cancel();
     }
 

@@ -1,5 +1,6 @@
 package com.snake;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -18,18 +19,26 @@ public class GameController implements Initializable {
 
     public void OnKeyPress(KeyCode code) {
         if (code == KeyCode.UP) {
+            if (GameLoop.direction == Direction.DOWN)
+                return;
             System.out.println("UP key was pressed");
             GameLoop.direction = Direction.UP;
         }
         else if (code == KeyCode.DOWN) {
+            if (GameLoop.direction == Direction.UP)
+                return;
             System.out.println("DOWN key was pressed");
             GameLoop.direction = Direction.DOWN;
         }
         else if (code == KeyCode.LEFT) {
+            if (GameLoop.direction == Direction.RIGHT)
+                return;
             System.out.println("LEFT key was pressed");
             GameLoop.direction = Direction.LEFT;
         }
         else if (code == KeyCode.RIGHT) {
+            if (GameLoop.direction == Direction.LEFT)
+                return;
             System.out.println("RIGHT key was pressed");
             GameLoop.direction = Direction.RIGHT;
         }
